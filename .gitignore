@@ -1,0 +1,15 @@
+bin/
+obj/
+Debug/
+Release/
+*.suo
+*.user
+*.sdf
+*.opensdf
+StyleCop.Cache
+TestResults/
+*.dbmdl
+*.log
+*.tlog
+*.GhostDoc.xml
+*.ipch
