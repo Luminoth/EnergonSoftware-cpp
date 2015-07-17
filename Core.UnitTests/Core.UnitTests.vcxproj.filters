@@ -10,8 +10,13 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Source Files\Math">
-      <UniqueIdentifier>{41dbd0c4-f848-4dd2-b62e-95308eeb907f}</UniqueIdentifier>
+      <UniqueIdentifier>{e883e1c3-650e-4558-98cf-47bf3812cab4}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\pch.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\pch.cc">
@@ -20,16 +25,5 @@
     <ClCompile Include="Math\Vector.cc">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\pch.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\targetver.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Math\Vector.h">
-      <Filter>Source Files\Math</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

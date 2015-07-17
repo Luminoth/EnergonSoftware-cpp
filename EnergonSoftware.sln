@@ -7,8 +7,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2404143-65A0-436B-A0D3-7057138BB0D4}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		DEPENDENCIES.md = DEPENDENCIES.md
 		README.md = README.md
+		TODO.md = TODO.md
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core.UnitTests", "Core.UnitTests\Core.UnitTests.vcxproj", "{5AD4F2A9-40C9-4224-AC11-DE4A5A8E884E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +26,10 @@ Global
 		{130A8585-8F47-4F82-B0E2-390704848ED4}.Debug|Win32.Build.0 = Debug|Win32
 		{130A8585-8F47-4F82-B0E2-390704848ED4}.Release|Win32.ActiveCfg = Release|Win32
 		{130A8585-8F47-4F82-B0E2-390704848ED4}.Release|Win32.Build.0 = Release|Win32
+		{5AD4F2A9-40C9-4224-AC11-DE4A5A8E884E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5AD4F2A9-40C9-4224-AC11-DE4A5A8E884E}.Debug|Win32.Build.0 = Debug|Win32
+		{5AD4F2A9-40C9-4224-AC11-DE4A5A8E884E}.Release|Win32.ActiveCfg = Release|Win32
+		{5AD4F2A9-40C9-4224-AC11-DE4A5A8E884E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
