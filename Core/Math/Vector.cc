@@ -32,4 +32,11 @@ Vector Vector::random(float length)
     return Vector(generator(), generator(), generator()).set_length(length);
 }
 
+std::string Vector::str() const
+{
+    std::stringstream ss;
+    ss << "Vector(x:" << std::fixed << x() << ", y:" << y() << ", z:" << z() << ", w:" << w() << ")";
+    return ss.str();
+}
+
 } }

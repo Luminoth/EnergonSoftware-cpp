@@ -25,5 +25,8 @@
     <ClCompile Include="Math\Vector.cc">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
+    <ClCompile Include="Math\Util.cc">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

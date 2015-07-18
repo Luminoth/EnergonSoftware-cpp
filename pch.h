@@ -4,7 +4,13 @@
 #include "targetver.h"
 
 #if defined WIN32
-    #define DllExport __declspec(dllexport)
+    #if defined DLL_EXPORT
+        #define DllExport __declspec(dllexport)
+    #elif defined DLL_IMPORT
+        #define DllExport __declspec(dllimport)
+    #else
+        #define DllExport
+    #endif
 #else
     #define DllExport
 #endif
@@ -12,9 +18,11 @@
 #include <cassert>
 #include <functional>
 #include <initializer_list>
+#include <iosfwd>
 #include <memory>
 #include <mutex>
 #include <random>
+#include <sstream>
 #include <string>
 #include <unordered_map>
 
