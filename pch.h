@@ -28,11 +28,6 @@
 
 #include <log4cpp/Category.hh>
 
-#if defined WIN32
-// can remove this once VC++ gets its shit together (VS 2015!)
-#define noexcept throw()
-#endif
-
 #define DISALLOW_COPY_AND_ASSIGN(TypeName) \
 TypeName(const TypeName&) = delete; \
 TypeName& operator=(TypeName&&) = delete

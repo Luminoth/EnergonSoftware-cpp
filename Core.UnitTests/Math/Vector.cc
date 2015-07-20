@@ -124,7 +124,7 @@ public:
         Assert::AreEqual(4.0f, v2.w());
     }
 
-    /*TEST_METHOD(constructor_initializer_list_empty)
+    TEST_METHOD(constructor_initializer_list_empty)
     {
         // Arrange
         Vector v1({ });
@@ -136,9 +136,9 @@ public:
         Assert::AreEqual(0.0f, v1.y());
         Assert::AreEqual(0.0f, v1.z());
         Assert::AreEqual(0.0f, v1.w());
-    }*/
+    }
 
-    /*TEST_METHOD(constructor_initializer_list_1component)
+    TEST_METHOD(constructor_initializer_list_1component)
     {
         // Arrange
         Vector v1({ 1.0f });
@@ -150,7 +150,7 @@ public:
         Assert::AreEqual(0.0f, v1.y());
         Assert::AreEqual(0.0f, v1.z());
         Assert::AreEqual(0.0f, v1.w());
-    }*/
+    }
 
     TEST_METHOD(constuctor_initializer_list_2component)
     {

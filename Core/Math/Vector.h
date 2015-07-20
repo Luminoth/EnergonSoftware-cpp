@@ -39,80 +39,52 @@ public:
     static Vector random(float length);
 
 public:
-    // TODO: with VS2015, brace-initializers can be used in this class
-    // (including in member initializers)
-    // instead of doing work inside the constructor bodies
-
     Vector()
     {
         _value[0] = _value[1] = _value[2] = _value[3] = 0.0f;
     }
 
     explicit Vector(float x)
-        //: _value{x}
+        : _value{x}
     {
-        _value[0] = x;
-        _value[1] = _value[2] = _value[3] = 0.0f;
     }
 
     Vector(float x, float y)
-        //: _value{x, y}
+        : _value{x, y}
     {
-        _value[0] = x;
-        _value[1] = y;
-        _value[2] = _value[3] = 0.0f;
     }
 
     Vector(float x, float y, float z)
-        //: _value{x, y, z}
+        : _value{x, y, z}
     {
-        _value[0] = x;
-        _value[1] = y;
-        _value[2] = z;
-        _value[3] = 0.0f;
     }
 
     Vector(float x, float y, float z, float w)
-        //: _value{x, y, z, w}
+        : _value{x, y, z, w}
     {
-        _value[0] = x;
-        _value[1] = y;
-        _value[2] = z;
-        _value[3] = w;
     }
 
     Vector(const Vector& v, float w)
-        //: _value{v.x(), v.y(), v.z(), w}
+        : _value{v.x(), v.y(), v.z(), w}
     {
-        _value[0] = v.x();
-        _value[1] = v.y();
-        _value[2] = v.z();
-        _value[3] = w;
     }
 
     // NOTE: v must have at least 4 floats
     // regardless of the "size" of the vector
-    Vector(const float* const v)
+    explicit Vector(const float* const v)
+        : _value{v[0], v[1], v[2], v[3]}
     {
-        _value[0] = v[0];
-        _value[1] = v[1];
-        _value[2] = v[2];
-        _value[3] = v[3];
     }
 
     explicit Vector(const std::initializer_list<float>& v)
     {
-        // TODO: remove this
-        _value[0] = _value[1] = _value[2] = _value[3] = 0.0f;
-
         assert(v.size() <= 4);
         std::copy(v.begin(), v.end(), _value);
     }
 
-    // VS2015 fixes this stuff
-    //explicit Vector(const Vector& v) = default;
-    //Vector(Vector&& v) = default;
+    DEFAULT_COPY_AND_ASSIGN(Vector);
 
+    Vector(Vector&& v) = default;
     virtual ~Vector() = default;
 
 public:
@@ -132,19 +104,7 @@ public:
 
     void zero() { _value[0] = _value[1] = _value[2] = _value[3] = 0.0f; }
 
-    bool is_zero() const
-    {
-        // TODO: this is returning NaN instead of 0xffffffff in VS 2012, not sure why
-/*#if defined USE_SSE
-        float d;
-        __m128 A = _mm_load_ps(_value);
-        __m128 S = _mm_set_ss(0.0f);
-        _mm_store_ss(&d, _mm_cmpeq_ss(A, S));
-        return d == 0xffffffff;
-#else*/
-        return 0.0f == x() && 0.0f == y() && 0.0f == z() && 0.0f == w();
-//#endif
-    }
+    bool is_zero() const { return 0.0f == x() && 0.0f == y() && 0.0f == z() && 0.0f == w(); }
 
 public:
     float length_squared() const
@@ -464,25 +424,24 @@ public:
     friend Vector operator*(float lhs, const Vector& rhs) { return rhs * lhs; }
 
 private:
-    // TODO: can use initializer in VS2015
-    ALIGN(16) float _value[4];// = { 0, 0, 0, 0 };
+    ALIGN(16) float _value[4] = { 0, 0, 0, 0 };
 };
 
 // some useful specializations that we can
 // derive from the more general Vector class
-typedef Vector Vector2;
-typedef Vector Point2;
-typedef Vector Normal2;
-typedef Vector Vector3;
-typedef Vector Point3;
-typedef Vector Normal3;
-typedef Vector Vector4;
-typedef Vector Point4;
-typedef Vector Normal4;
-typedef Vector Color;
-typedef Vector Direction;
-typedef Vector Position;
-typedef Vector Size;
+using Vector2 = Vector;
+using Point2 = Vector;
+using Normal2 = Vector;
+using Vector3 = Vector;
+using Point3 = Vector;
+using Normal3 = Vector;
+using Vector4 = Vector;
+using Point4 = Vector;
+using Normal4 = Vector;
+using Color = Vector;
+using Direction = Vector;
+using Position = Vector;
+using Size = Vector;
 
 } }
 
